@@ -1,0 +1,164 @@
+[
+   {
+      "Id":789218,
+      "Title":"New Morningstar Analyst Report for China Resources Power Holdings Co Ltd",
+      "Authors":[
+         {
+            "Id":1742,
+            "Name":"Jennifer Song"
+         },
+         {
+            "Id":1950,
+            "Name":"Lorraine Tan, CFA"
+         }
+      ],
+      "Keywords":[
+
+      ]
+   },
+   {
+      "Id":789211,
+      "Title":"MOC Valuation Model",
+      "Authors":[
+         {
+            "Id":1660,
+            "Name":"David Ellis"
+         },
+         {
+            "Id":2067,
+            "Name":"Violet Li"
+         }
+      ],
+      "Keywords":[
+
+      ]
+   },
+   {
+      "Id":789213,
+      "Title":"New Morningstar Analyst Report for Mortgage Choice Ltd",
+      "Authors":[
+         {
+            "Id":1660,
+            "Name":"David Ellis"
+         },
+         {
+            "Id":1669,
+            "Name":"Ravi Reddy"
+         }
+      ],
+      "Keywords":[
+
+      ]
+   },
+   {
+      "Id":789217,
+      "Title":"Softening Coal Prices and Improving Demand Will Drive a Better 2017 Outlook for Coal-Fired IPPs.",
+      "Authors":[
+         {
+            "Id":1742,
+            "Name":"Jennifer Song"
+         },
+         {
+            "Id":1950,
+            "Name":"Lorraine Tan, CFA"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   },
+   {
+      "Id":784822,
+      "Title":"BlackRock Indexed Australian Bond",
+      "Authors":[
+         {
+            "Id":1967,
+            "Name":"Anshula Venkataraman"
+         }
+      ],
+      "Keywords":[
+
+      ]
+   },
+   {
+      "Id":789207,
+      "Title":"Despite Higher Natural Disaster Costs, the Change Process Set to Accelerate. AUD 12 FVE Unchanged.",
+      "Authors":[
+         {
+            "Id":"1660",
+            "Name":"David Ellis"
+         },
+         {
+            "Id":"1669",
+            "Name":"Ravi Reddy"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   },
+   {
+      "Id":789208,
+      "Title":"AMC Valuation Model",
+      "Authors":[
+         {
+            "Id":"1804",
+            "Name":"Tim Mann"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   },
+   {
+      "Id":789205,
+      "Title":"Amcor Well Positioned Ahead For Upturn in U.S. Growth, Although Shares Overvalued",
+      "Authors":[
+         {
+            "Id":"1804",
+            "Name":"Tim Mann"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   },
+   {
+      "Id":789202,
+      "Title":"Apple Formally Joins Fight Against Qualcomm Over The Latter’s Business Practices",
+      "Authors":[
+         {
+            "Id":1919,
+            "Name":"Abhinav Davuluri"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   },
+   {
+      "Id":789197,
+      "Title":"STO Valuation Model",
+      "Authors":[
+         {
+            "Id":798,
+            "Name":"Mark Taylor"
+         }
+      ],
+      "Keywords":[
+         {
+            "Name":"STOCKS"
+         }
+      ]
+   }
+]

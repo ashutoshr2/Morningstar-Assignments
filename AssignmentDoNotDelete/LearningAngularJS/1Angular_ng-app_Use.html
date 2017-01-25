@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning Angular Js</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="angular.min.js" ></script>
+<script type="text/javascript">
+	var myapp=angular.module("mymodule",[]);
+	var mycontrollerobj1=function($scope){
+
+		$scope.message="Displaying message through modeland controller of Angular JS";
+	}
+	myapp.controller("controller1",mycontrollerobj1);
+
+	var mycontrollerobj2=function($scope){
+		var employee={ name:"Ashutosh", add:'Sion', designation:'Intern' };
+		$scope.emp=employee;
+	}
+	myapp.controller("controller2",mycontrollerobj2);
+
+	var mycontrollerobj3=function($scope){
+		var flag={ name:"My Country Flag", file:"myflag.png" };
+		$scope.fl=flag;
+	}
+	myapp.controller("controller3",mycontrollerobj3);
+
+	var mycontrollerobj4=function($scope){
+
+		$scope.txtmsg="Update me by entering text in the input text box above";
+	}
+	myapp.controller("controller4",mycontrollerobj4);
+
+	var mycontrollerobj5=function($scope){
+		var employee_details={ name:'Ashutosh ', location:'Sion'};
+		$scope.empdetail=employee_details;
+	}
+	myapp.controller("controller5",mycontrollerobj5);
+
+	var mycontrollerobj6=function($scope){
+		var all_employee_details=[{ name:'Ashutosh ', location:'Sion'},{ name:'Mandar ', location:'Panvel'},{ name:'Sudarshan ', location:'Thane'}];
+		$scope.allempdetail=all_employee_details;
+	}
+	myapp.controller("controller6",mycontrollerobj6);
+
+	var mycontrollerobj7=function($scope){
+		var all_country_city_list=[{ coname:'USA', cities:[{ctname:'Los Angelos'},{ctname:'Chicago'},{ctname:'Houston'}]},
+									{ coname:'India', cities:[{ctname:'Mumbai'},{ctname:'Pune'},{ctname:'Chennai'}]}];
+		$scope.allcitylist=all_country_city_list;
+	}
+	myapp.controller("controller7",mycontrollerobj7);
+
+	var mycontrollerobj8=function($scope){
+		var tech=[{ name:'C#', Likes:0, Dislikes:0},
+				  {	name:'Java', Likes:0, Dislikes:0}];
+		$scope.technologies=tech;
+		$scope.technologyLikes=function($scope)
+		{
+			$scope.Likes++;
+		}
+		$scope.technologyDislikes=function($scope)
+		{
+			$scope.Dislikes++;
+		}
+	}
+	myapp.controller("controller8",mycontrollerobj8);
+
+	var mycontrollerobj9=function($scope){
+		var all_employee_det=[{ name:'Mandar', location:'Sion', DOB: new Date("December 16, 1993"), Salary :50000},{ name:'Ashu', location:'Panvel', DOB: new Date("October 12, 1992"), Salary :58000},{ name:'Sudarshan', location:'Thane', DOB: new Date("August 11, 1993"), Salary :70000}];
+		$scope.allempdet=all_employee_det;
+		$scope.rowlimit=3;
+	}
+	myapp.sortcolumn='Location';
+	myapp.controller("controller9",mycontrollerobj9);
+	
+myapp.controller("myController", function($scope) {
+  var books = [
+  { ISBN : "45858921",Name : "Clean Code",Author : "Robert C. Martin",Category : "Software",price : 550},
+  { ISBN : "0927829081",Name : "AngulatJS",Author : "Shyam Sheshaydri",Category : "Software",price : 380},
+  { ISBN : "3498234392",Name : "5 Point Someone",Author : "Chetan Bhagat",Category : "Fiction",price : 275},
+  { ISBN : "0897437437",Name : "Shiva Trilogy",Author : "Amish Tripathi",Category : "Mythology",price : 660},
+  { ISBN : "83789378",Name : "Panipat",Author : "Vishwas Patil",Category : "History",price : 620}
+];
+	$scope.books = books;
+  $scope.sortColumn='Author';
+
+  }); 
+
+</script>
+<link rel="stylesheet" type="text/css" href="FileNoOfWords.css">
+</head>
+<body ng-app="mymodule">
+
+<div id="header" >
+<img src="logo.png" height="95px">
+</div>
+
+<div id="body">
+<center>
+<font color="red"><h2> Angular JS</h2></font>
+</center>
+<h3>1)Basics- ng-app</h3>
+<hr>
+Arithmatic Operation<br>
+1. 1+2= {{1+2}}<br>
+2. 1-2= {{1-2}}<br>
+3. 1/2= {{1/2}}<br>
+4. 1*2= {{1*2}}<br>
+5. 1%2= {{1%2}}<br>
+<hr>
+Plain Old Javascript Object <br>
+{Fname:'Ashutosh', Lname:'Jaiswal', Address:'Sion'}.Fname= {{ {Fname:'Ashutosh', Lname:'Jaiswal', Address:'Sion'}.Fname}}<br>
+<br>
+<hr>
+Array<br> 
+['Ashutosh', 'Sudarshan', 'Mandar', 'Ketan', 'Usama'][3]= {{ ['Ashutosh', 'Sudarshan', 'Mandar', 'Ketan', 'Usama'][3] }}
+<hr>
+Model-Controller
+<div>
+	<div ng-controller="controller1">
+		{{ message }}
+	</div>
+</div>
+<hr>
+Controller Binding key value pair data
+<div>
+	<div ng-controller="controller2">
+		{{ emp.add }}0
+	</div>
+</div>
+<hr>
+Controller Binding key value pair data (Image)
+<div>
+	<div ng-controller="controller3">
+		<div>{{ fl.name }}</div>
+		<div><img ng-src="{{ fl.file}}" alt="{{ f1.name +'Flag' }}"></div>
+	</div>
+</div>
+<hr>
+Model-Controller Sync Update<br>
+<div>
+	<div ng-controller="controller4">
+		<input type="text" name="Anytext" ng-model="txtmsg"><br>
+		{{ txtmsg }}
+	</div>
+</div>
+<hr style="width:50%">
+<div>
+	<div ng-controller="controller5">
+		<table border="1">
+			<tr> <td>Enter your name</td><td><input type="text" ng-model="empdetail.name"></td></tr>
+			<tr> <td>Where do you stay</td><td><input type="text" ng-model="empdetail.location"></td></tr>
+		</table>
+		<div>
+			My name is {{ empdetail.name}} I live in {{ empdetail.location}}
+		</div>
+	</div>
+</div>
+<hr>
+<div>
+Binding JSON data into table 
+	<div ng-controller="controller6">
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Location</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="foremployee in allempdetail">
+					<td>{{ foremployee.name }}</td>
+					<td>{{ foremployee.location }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<hr width="50%">
+<div>
+Binding JSON data into unordered list 
+	<div ng-controller="controller7">
+		<ul>
+			<li ng-repeat="forcountrycity in allcitylist"> {{ forcountrycity.coname }}
+			<ul>
+				<li ng-repeat="forcity in forcountrycity.cities">{{ forcity.ctname }}</li>
+			</ul>			
+			</li>
+		</ul>
+	</div>
+</div>
+
+<hr width="50%">
+<div>
+Finding Index 
+	<div ng-controller="controller7" >
+		<ul>
+			<li ng-repeat="forcountrycity in allcitylist"> {{ forcountrycity.coname }} - Index= {{$index}}
+			<ul>
+				<li ng-repeat="forcity in forcountrycity.cities" ng-init="parentindex=$index"	 >{{ forcity.ctname }} Parent Index={{parentindex}} - Index= {{$index}} </li>
+			</ul>			
+			</li>
+		</ul>
+	</div>
+</div>
+ <hr>
+</div>
+
+<div>
+Handling Events 
+	<div ng-controller="controller8" >
+		<table border=1>
+			<thead>
+				<tr>
+					<th>Technology Name</th>
+					<th>Number Of Likes</th>
+					<th>Number Of Disikes</th>
+					<th>Like/Dislike</th>
+				</tr>
+			</thead>
+		<tbody>
+			<tr ng-repeat="techno in technologies">
+				<td> {{ techno.name }}</td>
+				<td> {{ techno.Likes }}</td>
+				<td> {{ techno.Dislikes }}</td>
+				<td><input type="button" value="Like" ng-click=technologyLikes(techno)><input type="button" value="Dislike" ng-click="technologyDislikes(techno)"></td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+<hr>
+<div>
+Filters
+<div ng-controller="controller9">
+Number Of Rows To Display:<input type="number" step="1" min="0" max="3" ng-model="rowlimit" >
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Name</td>
+					<td>Location</td>
+					<td>DOB</td>
+					<td>Salary(currency)</td>
+					<td>Salary(Number)</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="foremplo in allempdet | limitTo:rowlimit	| orderBy:'Salary':true"> <!-- orderBy:'Salary':true" to sort by salary -->
+					<td>{{ foremplo.name |uppercase }}</td>
+					<td>{{ foremplo.location|lowercase }}</td>
+					<td>{{ foremplo.DOB|date:"dd/mm/yyyy" }}</td>
+					<td>{{ foremplo.Salary|currency:"#":2 }}</td>
+					<td>{{ foremplo.Salary|number:2 }}</td>
+				</tr>
+			</tbody>
+		</table>
+</div>
+</div>
+<hr>
+<div>
+Filters
+
+<div ng-controller="myController" >
+		Order By: <select ng-model="sortColumn">
+					<option value="ISBN">ISBN ASC</option>
+					<option value="Name">NAME ASC</option>
+					<option value="Author">AUTHOR ASC</option>
+					<option value="Category">CATEGORY ASC</option>
+					<option value="-price">PRICE DESC</option>
+				  </select>
+			<table border=2>
+				<thead>
+				<tr>
+					<th>ISBN</th>
+					<th>NAME</th>
+					<th>AUTHOR</th>
+					<th>CATEGORY</th>
+					<th>PRICE</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="book in books | orderBy:sortColumn">
+						<td>{{ book.ISBN }}</td>
+						<td>{{ book.Name }}</td>
+						<td>{{ book.Author }}</td>
+						<td>{{ book.Category }}</td>
+						<td>{{ book.price }}</td>
+						</tr>
+				</tbody>
+		</table>
+	</div>	
+
+
+</div>
+</div>
+</body>
+</html>

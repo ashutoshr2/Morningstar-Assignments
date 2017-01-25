@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count Number Of Words</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+var flag=1;
+function jsondataload() {
+$.getJSON("books.json",function(obj){
+  var tbl=$("<table/>").attr({id:'mytable',border:'1'});
+    $("#div1").append(tbl);
+    var tr="";
+    
+    $("#mytable").append("<tr><th onclick='jsonsort(this)'>Name</th><th onclick='jsonsort(this)'>Author</th><th>Genre</th><th>Price</th></tr>"); 
+    for(var i=0;i<obj.length;i++) {
+        var tr="<tr>";
+        var td1="<td>"+obj[i]["name"]+"</td>";
+        var td2="<td>"+obj[i]["author"]+"</td>";
+        var td3="<td>"+obj[i]["genre_s"]+"</td>";
+        var td4="<td>"+obj[i]["price"]+"</td></tr>"; 
+        $("#mytable").append(tr+td1+td2+td3+td4); 
+    }
+});    
+}
+function jsonsort(elem) {
+    if(flag===1)
+    {
+    var field = $(elem).html().toLowerCase();
+    var fieldpos = {
+        'name': 0,
+        'author': 1
+    }
+    var $divs = $("#mytable > tr:not(:first-child)");
+    var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("td:eq("+fieldpos[field]+")").text() < $(b).find("td:eq("+fieldpos[field]+")").text();
+    });
+    var header = "<tr><th onclick='jsonsort(this)'>Name</th><th onclick='jsonsort(this)'>Author</th><th>Genre</th><th>Price</th></tr>";
+    $("#mytable").html(header);
+    $("#mytable").append(alphabeticallyOrderedDivs);
+    flag=0;
+
+    }
+    else if(flag===0)
+    {
+    var field = $(elem).html().toLowerCase();
+    var fieldpos = {
+        'name': 0,
+        'author': 1
+    }
+    var $divs = $("#mytable > tr:not(:first-child)");
+    var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+        return $(a).find("td:eq("+fieldpos[field]+")").text() > $(b).find("td:eq("+fieldpos[field]+")").text();
+    });
+    var header = "<tr><th onclick='jsonsort(this)'>Name</th><th onclick='jsonsort(this)'>Author</th><th>Genre</th><th>Price</th></tr>";
+    $("#mytable").html(header);
+    $("#mytable").append(alphabeticallyOrderedDivs);
+    flag=1;
+    }
+    /*jsonsort1();*/
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="FileNoOfWords.css">
+</head>
+<body onload="jsondataload()">
+
+<div id="header" >
+<img src="logo.png" height="95px">
+</div>
+
+<div id="body">
+<center>
+<font color="red"><h2> Assignment No 1</h2></font>
+</center>
+<h3>A) JSON Table Sort</h3>
+</div>
+<div id="div1"></div>
+<div id="div2"></div>
+
+</body>
+</html>

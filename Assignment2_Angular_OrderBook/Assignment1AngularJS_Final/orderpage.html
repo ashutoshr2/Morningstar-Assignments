@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learning Angular Js</title>
+    <script type="text/javascript" src="JS/jquery.js"></script>
+    <script type="text/javascript" src="JS/angular.min.js"></script>
+    <script type="text/javascript" src="JS/Books.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/Assignment1.css">
+
+</head>
+
+<body ng-app="mymodule">
+    <div id="header">
+        <img src="Images/logo.png" height="75px">
+    </div>
+    <div id="body" ng-controller="controller1">
+        <ul>
+            <li><a ng-click="RedirectToHomepage()" class="active" href="">Home</a></li>
+            <li><a ng-click="RedirectToBooksPage()">Books</a></li>
+            <li><a ng-click="RedirectToContactusPage()">Contact Us</a></li>
+            <li><a ng-click="RedirectToAboutusPage()">About Us</a></li>
+        </ul>
+    </div>
+    <div>
+        <div ng-controller="myController2">
+            <table align="CENTER" id="particularbook">
+                <tbody>
+                    <tr ng-repeat="pbook in forparticularbooks | filter:weDontLike(filter)" ng-if="filter !=undefined">
+                        <td class="order">
+                            <div class="left"><img ng-src="Images/{{ pbook.file }}">
+                            </div>
+                            <div class="right">
+                                <div class="top">{{ pbook.Name }}
+                                    <div class="left"><a href="BooksPage.html">X</a></div>
+                                </div>
+                                <div style="font-size:21px;line-height:2">
+                                    {{ pbook.Author }}
+                                </div>
+                                <div>
+                                    <div style="font-size:20px ">{{ pbook.price }} INR</div>
+                                    <div class="buy"><img src="Images/buynow.png" width=></div>
+
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

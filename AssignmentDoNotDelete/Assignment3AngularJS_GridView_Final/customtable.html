@@ -1,0 +1,21 @@
+<html>
+   <head>
+      <title>Learning Angular Js</title>
+      <link rel="stylesheet" type="text/css" href="CSS/Assignment.css">
+      <script type="text/javascript" src="JS/jquery.js"></script>
+      <script type="text/javascript" src="JS/angular.min.js"></script>
+      <script type="text/javascript" src="JS/customscript.js"></script>
+   </head>
+   <body>
+      <div id="header">
+         <img src="Images/logo.png" height="75px">
+      </div>
+      <br>
+      <div ng-app="app" ng-controller="myController">
+         <center>
+            <h3>Assignment 3- Reusable Table using Custom Directive</h3>
+            <grid-view headers="Title,Id,Authors,Keywords" data="requestData" ></grid-view>
+         </center>
+      </div>
+   </body>
+</html>

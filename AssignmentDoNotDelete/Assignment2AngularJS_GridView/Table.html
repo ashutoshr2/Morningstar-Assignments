@@ -1,0 +1,20 @@
+<div ng-controller="myController">
+            <center>
+                <table border=2>
+                    <thead>
+                        <tr>
+                            <th >Title</th>
+                            <th >Author</th>
+                            <th >Keyword</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="xmldata in griddata">
+                            <td>{{ xmldata.Title }}</td>
+                            <td>{{ xmldata.Author }}</a></td>
+                            <td>{{ xmldata.Keyword }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>

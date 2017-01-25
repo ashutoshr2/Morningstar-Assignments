@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learning Angular Js</title>
+    <script type="text/javascript" src="JS/jquery.js"></script>
+    <script type="text/javascript" src="JS/angular.min.js"></script>
+    <script type="text/javascript" src="JS/Books.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="CSS/Assignment.css">
+</head>
+
+<body ng-app="mymodule">
+    <div id="header">
+        <img src="Images/logo.png" height="75px">
+    </div>
+    <div id="body" ng-controller="controller1">
+        <ul>
+            <li><a ng-click="RedirectToHomepage()" class="active" href="">Home</a></li>
+            <li><a ng-click="RedirectToBooksPage()">Books</a></li>
+            <li><a ng-click="RedirectToContactusPage()">Contact Us</a></li>
+            <li><a ng-click="RedirectToAboutusPage()">About Us</a></li>
+        </ul>
+    </div>
+    <div>
+        <div ng-controller="myController">
+            <center>
+                <table class="booklist" border=2>
+                    <thead>
+                        <tr>
+                            <th ng-click="sortData('ISBN')">ISBN <div ng-class="getSortClass('ISBN')"></th>
+                            <th ng-click="sortData('Name')">NAME <div ng-class="getSortClass('Name')"></th>
+                            <th ng-click="sortData('Author')">AUTHOR<div ng-class="getSortClass('Author')"></th>
+                            <th ng-click="sortData('Category')">CATEGORY<div ng-class="getSortClass('Category')"></th>
+                            <th ng-click="sortData('price')">PRICE<div ng-class="getSortClass('price')"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="book in books | orderBy:sortColumn:reverseSort">
+                            <td>{{ book.ISBN }}</td>
+                            <td><a href="" ng-click="getdetail(book)" target="_blank">{{ book.Name }}</a></td>
+                            <td>{{ book.Author }}</td>
+                            <td>{{ book.Category }}</td>
+                            <td>{{ book.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </div>
+</body>
+
+</html>

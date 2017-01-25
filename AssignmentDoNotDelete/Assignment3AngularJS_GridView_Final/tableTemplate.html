@@ -1,0 +1,8 @@
+<table border=1>
+   <tr>
+      <th ng-repeat="onlyselectedcol in selectedCols">{{onlyselectedcol}}</th>
+   </tr>
+   <tr ng-repeat="alldata in data">
+      <td ng-repeat="onlyselectedcol in selectedCols">{{alldata[onlyselectedcol]}}</td>
+   </tr>
+</table>

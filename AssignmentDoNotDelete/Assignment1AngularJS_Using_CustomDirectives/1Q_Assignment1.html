@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learning Angular Js</title>
+    <script type="text/javascript" src="JS/jquery.js"></script>
+    <script type="text/javascript" src="JS/angular.min.js"></script>
+    <script type="text/javascript">
+        var myapp = angular.module("mymodule", []);
+        var mycontrollerobj1 = function($scope) {
+            var employee_details = {
+                name: 'Ashutosh ',
+                location: 'Sion'
+            };
+            $scope.empdetail = employee_details;
+        }
+        myapp.controller("controller1", mycontrollerobj1);
+    </script>
+    <link rel="stylesheet" type="text/css" href="CSS/Assignment.css">
+</head>
+
+<body ng-app="mymodule">
+
+    <div id="header">
+        <img src="Images/logo.png" height="95px">
+    </div>
+
+    <div id="body">
+        <center>
+            <font color="red">
+                <h2>Learning Angular JS</h2>
+            </font>
+        </center>
+        <h3>1.Create a webpage using angularJS having a textbox. Any text entered in the textbox should instantly show up in the page.</h3>
+        <div>
+            <div ng-controller="controller1">
+                <table border="1">
+                    <tr>
+                        <td>Enter your name</td>
+                        <td><input type="text" ng-model="empdetail.name"></td>
+                    </tr>
+                    <tr>
+                        <td>Where do you stay</td>
+                        <td><input type="text" ng-model="empdetail.location"></td>
+                    </tr>
+                </table>
+                <div>
+                    My name is {{ empdetail.name}} I live in {{ empdetail.location}}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

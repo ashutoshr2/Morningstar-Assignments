@@ -1,0 +1,26 @@
+<div ng-controller="myController2">
+            <table align="CENTER" id="particularbook">
+                <tbody>
+                    <tr ng-repeat="pbook in forparticularbooks | filter:weDontLike(filter)">
+                        <td class="order">
+                            <div class="left"><img ng-src="Images/{{ pbook.file }}">
+                            </div>
+                            <div class="right">
+                                <div class="top">{{ pbook.Name }}
+                                    <div class="left"><a href="CustomBooksPage.html">X</a></div>
+                                </div>
+                                <div style="font-size:21px;line-height:2">
+                                    {{ pbook.Author }}
+                                </div>
+                                <div>
+                                    <div style="font-size:20px ">{{ pbook.price }} INR</div>
+                                    <div class="buy"><img src="Images/buynow.png" width=></div>
+
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
